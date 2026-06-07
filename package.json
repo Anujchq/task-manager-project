@@ -1,0 +1,25 @@
+{
+  "name": "taskmanagerproject",
+  "version": "1.0.0",
+  "description": "Studio Graphene Task Manager Backend",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "task-manager"
+  ],
+  "author": "Anuj Chamoli",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

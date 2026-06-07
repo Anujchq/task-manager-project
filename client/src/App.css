@@ -1,0 +1,203 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+}
+
+.light,
+.dark {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+h2 {
+  margin-top: 25px;
+  color: #444;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74,144,226,0.3);
+}
+
+button {
+  padding: 9px 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #4a90e2;
+  color: white;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #357bd8;
+  transform: scale(1.03);
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.stats div {
+  flex: 1;
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+
+.stats h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.stats p {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 8px;
+  color: #222;
+}
+
+.filter-group button {
+  margin-right: 8px;
+  background: #e0e0e0;
+  color: #333;
+}
+
+.filter-group button:hover {
+  background: #cfcfcf;
+}
+
+.search-box {
+  margin-top: 10px;
+}
+
+.card h3 {
+  margin: 0 0 5px 0;
+  color: #222;
+}
+
+.status-active {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.status-completed {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.overdue {
+  border-left: 5px solid red;
+}
+
+.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+.dark .card {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.dark input,
+.dark textarea {
+  background: #2a2a2a;
+  color: white;
+  border: 1px solid #444;
+}
+
+.dark input:focus,
+.dark textarea:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74,144,226,0.4);
+}
+
+.dark button {
+  background: #4a90e2;
+}
+
+.dark button:hover {
+  background: #357bd8;
+}
+
+.dark .stats div {
+  background: #1e1e1e;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .stats {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #4a90e2;
+  color: white;
+  font-weight: 500;
+}
+
+.theme-toggle:hover {
+  background: #357bd8;
+}
