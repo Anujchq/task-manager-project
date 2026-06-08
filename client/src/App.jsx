@@ -41,18 +41,19 @@ function App() {
     }
 
     try {
-      await axios.post(`${API}/tasks`, {
+      const response = await axios.post(`${API}/tasks`, {
   title,
   description,
   dueDate,
-     });
-     
-      setTitle("");
-      setDescription("");
-      setDueDate("");
+});
 
-      await loadTasks();
-    } catch (error) {
+setTasks(prev => [response.data.task, ...prev]);
+
+setTitle("");
+setDescription("");
+setDueDate("");
+}
+catch (error) {
       console.log(error);
     }
   };
