@@ -43,11 +43,11 @@ cd client
 npm install
 npm run dev
 
-## Note
-Make sure both frontend and backend are running at the same time.
+## Known Limitations
 
-Backend runs on: http://localhost:3000  
-Frontend runs on: http://localhost:5173
-If any port is busy, please ensure no other process is running on 3000 or 5173.
+- The backend currently uses a JSON file (`tasks.json`) for data storage instead of a database.
+- When deployed on free hosting platforms, newly added or updated tasks may occasionally require a page refresh to immediately reflect changes.
+- In a production environment, this would be replaced with a database such as MongoDB or PostgreSQL.
+
 ## Author
 Anuj Chamoli
