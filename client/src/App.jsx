@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+const API = "https://task-manager-project-ed2s.onrender.com";
 function App() {
   const [search, setSearch] = useState("");
   const [tasks, setTasks] = useState([]);
@@ -24,8 +25,8 @@ function App() {
   const loadTasks = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/tasks"
-      );
+  `${API}/tasks`
+    );
 
       setTasks(response.data);
     } catch (error) {
@@ -40,11 +41,11 @@ function App() {
     }
 
     try {
-      await axios.post("http://localhost:3000/tasks", {
-        title,
-        description,
-        dueDate,
-      });
+      await axios.post(`${API}/tasks`, {
+  title,
+  description,
+  dueDate,
+     });
      
       setTitle("");
       setDescription("");
@@ -64,9 +65,9 @@ function App() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(
-        `http://localhost:3000/tasks/${id}`
-      );
+     await axios.delete(
+  `${API}/tasks/${id}`
+);
 
       loadTasks();
     } catch (error) {
@@ -76,9 +77,9 @@ function App() {
 
   const toggleTask = async (id) => {
     try {
-      await axios.patch(
-        `http://localhost:3000/tasks/${id}/toggle`
-      );
+     await axios.patch(
+  `${API}/tasks/${id}/toggle`
+);
 
       loadTasks();
     } catch (error) {
@@ -96,13 +97,13 @@ function App() {
   const saveEdit = async () => {
     try {
       await axios.put(
-        `http://localhost:3000/tasks/${editingId}`,
-        {
-          title: editTitle,
-          description: editDescription,
-          dueDate: editDueDate,
-        }
-      );
+  `${API}/tasks/${editingId}`,
+  {
+    title: editTitle,
+    description: editDescription,
+    dueDate: editDueDate,
+  }
+);
 
       setEditingId(null);
 
