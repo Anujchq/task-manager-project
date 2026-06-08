@@ -66,28 +66,36 @@ catch (error) {
     if (!confirmDelete) return;
 
     try {
-     await axios.delete(
-  `${API}/tasks/${id}`
-);
+     await axios.delete(`${API}/tasks/${id}`);
 
-     await loadTasks();
+setTasks(prev =>
+  prev.filter(task => task.id !== id)
+);
     } catch (error) {
       console.log(error);
     }
   };
 
   const toggleTask = async (id) => {
-    try {
-     await axios.patch(
-  `${API}/tasks/${id}/toggle`
-);
+  try {
+    await axios.patch(
+      `${API}/tasks/${id}/toggle`
+    );
 
-    await  loadTasks();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+    setTasks(prev =>
+      prev.map(task =>
+        task.id === id
+          ? {
+              ...task,
+              completed: !task.completed,
+            }
+          : task
+      )
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
   const startEdit = (task) => {
     setEditingId(task.id);
     setEditTitle(task.title);
