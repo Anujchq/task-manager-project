@@ -51,7 +51,7 @@ function App() {
       setDescription("");
       setDueDate("");
 
-      loadTasks();
+      await loadTasks();
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +69,7 @@ function App() {
   `${API}/tasks/${id}`
 );
 
-      loadTasks();
+     await loadTasks();
     } catch (error) {
       console.log(error);
     }
@@ -81,7 +81,7 @@ function App() {
   `${API}/tasks/${id}/toggle`
 );
 
-      loadTasks();
+    await  loadTasks();
     } catch (error) {
       console.log(error);
     }
@@ -107,7 +107,7 @@ function App() {
 
       setEditingId(null);
 
-      loadTasks();
+     await loadTasks();
     } catch (error) {
       console.log(error);
     }
